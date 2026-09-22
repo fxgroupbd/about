@@ -1,1 +1,462 @@
-# about
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FX Group LLC | Premium Global B2B Sourcing & Parent Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #161616;
+            --border-color: #262626;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent-blue: #00bcd4;
+            --accent-green: #22c55e;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-family);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
+
+        .phone-wrapper {
+            width: 100%;
+            max-width: 480px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Standard Header */
+        header {
+            padding: 20px 24px;
+            background-color: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-logo {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--text-primary);
+            text-transform: uppercase;
+        }
+
+        .header-logo span {
+            color: var(--accent-blue);
+        }
+
+        .header-badge {
+            font-size: 10px;
+            background: rgba(0, 188, 212, 0.1);
+            color: var(--accent-blue);
+            padding: 4px 8px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Profile & Leadership */
+        .profile-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-blue);
+            margin-bottom: 12px;
+        }
+
+        .profile-card h1 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .profile-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        /* Key Metrics Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .spec-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .spec-item i {
+            font-size: 20px;
+            color: var(--accent-blue);
+        }
+
+        .spec-text h4 {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .spec-text p {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Parent Company Banner */
+        .parent-banner {
+            background: linear-gradient(135deg, #161616 0%, #222222 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .parent-info h3 {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .parent-info p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .visit-btn {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        /* B2B Products Gallery */
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 12px;
+            color: var(--accent-blue);
+            font-weight: 400;
+        }
+
+        .products-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .product-details {
+            padding: 14px;
+        }
+
+        .product-details h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .product-details p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Executive Contact AI */
+        .ai-assistant {
+            background: rgba(0, 188, 212, 0.05);
+            border: 1px solid rgba(0, 188, 212, 0.2);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .ai-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .ai-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .ai-info p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Standard Footer */
+        footer {
+            background-color: #080808;
+            padding: 24px 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footer-emails {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-emails a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-emails span {
+            color: var(--border-color);
+        }
+
+        .location-text {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: #52525b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-wrapper">
+        <!-- Standard Header -->
+        <header>
+            <div class="header-logo">FX GROUP <span>LLC</span></div>
+            <div class="header-badge"><i class="fas fa-globe"></i> Global Wholesale</div>
+        </header>
+
+        <div class="content">
+            <!-- Executive Profile -->
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Fahim Ahammad Mazumder">
+                <h1>Fahim Ahammad Mazumder</h1>
+                <p>Founder & CEO, FX Group LLC</p>
+            </div>
+
+            <!-- Key B2B Specifications -->
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <i class="fas fa-boxes-packing"></i>
+                    <div class="spec-text">
+                        <h4>Minimum Order</h4>
+                        <p>MOQ 50 pcs</p>
+                    </div>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-tags"></i>
+                    <div class="spec-text">
+                        <h4>Branding</h4>
+                        <p>Private Label</p>
+                    </div>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-industry"></i>
+                    <div class="spec-text">
+                        <h4>Location</h4>
+                        <p>EPZ & Kalurghat</p>
+                    </div>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-earth-americas"></i>
+                    <div class="spec-text">
+                        <h4>Supply Chain</h4>
+                        <p>All-Over World</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parent Company Tag -->
+            <div class="parent-banner">
+                <div class="parent-info">
+                    <h3>Fahix <i class="fas fa-check-circle" style="color: var(--accent-blue); font-size: 14px;"></i></h3>
+                    <p>D2C International Clothing Brand</p>
+                </div>
+                <a href="https://fahix.com" target="_blank" class="visit-btn">fahix.com</a>
+            </div>
+
+            <!-- B2B Products Section -->
+            <div>
+                <div class="section-title">
+                    B2B Wholesale Products
+                    <span>Crafted by Bangladesh 🇧🇩</span>
+                </div>
+                <div class="products-grid">
+                    
+                    <!-- FX Jute -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80');">
+                            <span class="product-tag">FX Jute</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Eco-Friendly Jute Goods</h3>
+                            <p>Custom eco-jute bags, packaging, and diversified jute products with customized logo prints & leather patches.</p>
+                        </div>
+                    </div>
+
+                    <!-- FX Leather -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80');">
+                            <span class="product-tag">FX Leather</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Genuine Leather Goods</h3>
+                            <p>Premium genuine leather jackets, wallets, belts, and accessories. Custom embossed branding available.</p>
+                        </div>
+                    </div>
+
+                    <!-- FX Handicrafts -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1606744888344-493238951221?auto=format&fit=crop&w=600&q=80');">
+                            <span class="product-tag">FX Handicrafts</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Artisanal Handicrafts</h3>
+                            <p>Handcrafted home decor and lifestyle items made by master artisans from Chittagong, Bangladesh.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- AI Business Manager Contact -->
+            <div class="ai-assistant">
+                <div class="ai-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="ai-info">
+                    <h4>Mrs. Putuli</h4>
+                    <p>Business Manager & AI Assistant</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Standard Footer -->
+        <footer>
+            <div class="footer-emails">
+                <a href="mailto:ceo@fxgroup.bd">ceo@fxgroup.bd</a>
+                <span>|</span>
+                <a href="mailto:b2b@fxgroup.bd">b2b@fxgroup.bd</a>
+            </div>
+            <div class="location-text">
+                <i class="fas fa-location-dot"></i> EPZ & Kalurghat, Chittagong, Bangladesh
+            </div>
+            <div class="copyright">
+                &copy; 2026 FX Group LLC. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
+ 
